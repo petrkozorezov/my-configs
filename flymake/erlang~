@@ -1,0 +1,24 @@
+#!/usr/bin/env escript
+-export([main/1]).
+
+main([FileName]) ->
+%%    compile:file(FileName, [
+%%                            warn_obsolete_guard,
+%%                            warn_unused_import,
+%%                            warn_shadow_vars,
+%%                            warn_export_vars,
+%%                            strong_validation,
+%%                            report
+%%                           ]).
+%%    make:files([FileName]).
+	{ProjRoot, FilePath, proj_path} = 
+		lists:foldr(fun("src", {ProjPath, FilePath, file_path}) ->
+							{ProjPath, ["src" | FilePath], proj_path};
+					   (E, {ProjPath, FilePath, proj_path}) ->
+							{[E | ProjPath], FilePath, proj_path};
+					   (E, {ProjPath, FilePath, file_path}) ->
+							{ProjPath, [E | FilePath], file_path}
+					   end, {[], [], file_path}, filename:split(FileName)),
+
+ 	c:cd(filename:join(ProjRoot)),
+  	make:files([filename:join(FilePath)]).
