@@ -4,10 +4,12 @@
 (interactive)
 (load "~/.emacs"))
 
+
 ;; ================ Color theme ================
 (require 'color-theme)
-(load-file "~/emacs/color-themes/color-theme-tango.el")
-(color-theme-tango)
+(load-file "~/emacs/color-themes/color-theme-subdued.el")
+(color-theme-subdued)
+
 
 ;; =============== Fullscreen ==================
 (defun toggle-fullscreen (&optional f)
@@ -23,6 +25,27 @@
 ; anything to the initial frame if it's in your .emacs, since that file is
 ; read _after_ the initial frame is created.
 (add-hook 'after-make-frame-functions 'toggle-fullscreen)
+
+;; ====================== highlight-current-line ====================
+(require 'highlight-current-line)
+(highlight-current-line-on t)
+
+;; ======================== Line num ================================
+(load-file "~/emacs/line-num.el")
+(require 'line-num)
+(global-linum-mode 1)
+
+(setq linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode speedbar-mode))
+(defun linum-on ()
+  (unless (or (minibufferp) (member major-mode linum-disabled-modes-list))
+    (linum-mode 1)))
+
+;; ==================== Cursor =================
+(load-file "~/emacs/cursor-chg.el")
+(require 'cursor-chg)            ; Load the library
+;; (toggle-cursor-type-when-idle 1) ; Turn on cursor change when Emacs is idle
+(change-cursor-mode 1)           ; Turn on change for overwrite, read-only, and input mode
+
 
 ;; ================ Erlang mode ================
 (add-to-list 'load-path ".....")
@@ -63,6 +86,7 @@
     )
   "Additional keys to bind when in Erlang shell.")
 
+
 ;; =============== FlyMake ===================
 (require 'flymake)
 
@@ -91,11 +115,13 @@
 (speedbar-add-supported-extension ".thrift")
 (speedbar-add-supported-extension ".js")
 
+
 ;; =============== Thrift =====================
 (load "~/emacs/thrift-mode.el")
 (require 'thrift-mode)
 
 (add-to-list 'auto-mode-alist '("\\.thrift?$" . trift-mode))
+
 
 ;; =============== Others =====================
 (setq-default tab-width 4)
@@ -112,6 +138,9 @@
   ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#2e3436" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
+(tool-bar-mode -1)
+
+;; ================ Projects =================
 (defun open-lego ()
   (interactive)
   (cd "~/Desktop/Workspaces/Erlang1/lego_game_server1")
