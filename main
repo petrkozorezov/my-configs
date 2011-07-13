@@ -138,7 +138,14 @@
   ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#2e3436" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
 
+;; disable tool-bar
 (tool-bar-mode -1)
+
+;; disable auto copy selection
+(setq mouse-drag-copy-region nil)
+
+;; enable deleting selected text when typing or pasting
+(delete-selection-mode 1)
 
 ;; ================ Projects =================
 (defun open-lego ()
