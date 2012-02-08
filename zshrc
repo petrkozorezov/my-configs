@@ -7,6 +7,7 @@ export EDITOR="$HOME/emacs/runemacsclient"
 unsetopt beep
 bindkey -e
 
+fpath=(~/.zsh/functions $fpath)
 zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit promptinit
 compinit
