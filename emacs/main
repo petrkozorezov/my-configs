@@ -7,7 +7,7 @@
 
 ;; ================ Color theme ================
 (require 'color-theme)
-(load-file "~/emacs/color-themes/color-theme-subdued.el")
+(load-file "~/configs/emacs/color-themes/color-theme-subdued.el")
 (color-theme-subdued)
 
 
@@ -31,7 +31,7 @@
 (highlight-current-line-on t)
 
 ;; ======================== Line num ================================
-(load-file "~/emacs/line-num.el")
+(load-file "~/configs/emacs/line-num.el")
 (require 'line-num)
 (global-linum-mode 1)
 
@@ -41,7 +41,7 @@
     (linum-mode 1)))
 
 ;; ==================== Cursor =================
-(load-file "~/emacs/cursor-chg.el")
+(load-file "~/configs/emacs/cursor-chg.el")
 (require 'cursor-chg)            ; Load the library
 ;; (toggle-cursor-type-when-idle 1) ; Turn on cursor change when Emacs is idle
 (change-cursor-mode 1)           ; Turn on change for overwrite, read-only, and input mode
@@ -72,7 +72,7 @@
 
 
 ;; ================ Distel ====================
-(add-to-list 'load-path "~/emacs/distel/share/distel/elisp")
+(add-to-list 'load-path "~/configs/emacs/distel/share/distel/elisp")
 (require 'distel)
 (distel-setup)
 
@@ -94,30 +94,30 @@
   (let* ((temp-file (flymake-init-create-temp-buffer-copy 'flymake-create-temp-inplace))
          (local-file (file-relative-name temp-file
                                          (file-name-directory buffer-file-name))))
-      (list "~/emacs/flymake/erlang" (list buffer-file-name))))
+      (list "~/configs/emacs/flymake/erlang" (list buffer-file-name))))
 
 
 (add-to-list 'flymake-allowed-file-name-masks '("\\.erl\\'" flymake-erlang-init))
 (add-hook 'find-file-hook 'flymake-find-file-hook)
 
 ;; =============== Esense =====================
-;;(add-to-list 'load-path "~/emacs/esense")
+;;(add-to-list 'load-path "~/configs/emacs/esense")
 ;;(require 'esense-start)
 ;;
-;;(setq esense-indexer-program "~/emacs/esense/esense.sh")
+;;(setq esense-indexer-program "~/configs/emacs/esense/esense.sh")
 
 
 ;; =============== Speedbar ===================
-(speedbar 1)
-(speedbar-add-supported-extension ".erl")
-(speedbar-add-supported-extension ".hrl") 
-(speedbar-add-supported-extension ".sh")
-(speedbar-add-supported-extension ".thrift")
-(speedbar-add-supported-extension ".js")
+;;(speedbar 1)
+;;(speedbar-add-supported-extension ".erl")
+;;(speedbar-add-supported-extension ".hrl") 
+;;(speedbar-add-supported-extension ".sh")
+;;(speedbar-add-supported-extension ".thrift")
+;;(speedbar-add-supported-extension ".js")
 
 
 ;; =============== Thrift =====================
-(load "~/emacs/thrift-mode.el")
+(load "~/configs/emacs/thrift-mode.el")
 (require 'thrift-mode)
 
 (add-to-list 'auto-mode-alist '("\\.thrift?$" . trift-mode))
@@ -167,8 +167,19 @@
 (delete-selection-mode 1)
 
 ;; ================ Projects =================
-(defun open-lego ()
+(defun open-projects ()
   (interactive)
-  (cd "~/Desktop/Workspaces/Erlang1/lego_game_server1")
+  (cd "~/Desktop/Workspaces/Erlang1/")
   (speedbar-update-contents)
 )
+
+
+;; ==================== speedbar ============
+(load-file "~/configs/emacs/sr-speedbar.el")
+(require 'sr-speedbar)
+(global-set-key [f1] 'sr-speedbar-toggle)
+(setq sr-speedbar-right-side nil)
+(setq speedbar-show-unknown-files t)
+
+;; =================== tabbar ============
+(tabbar-mode 1)
