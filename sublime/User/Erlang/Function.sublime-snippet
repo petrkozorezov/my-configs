@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[${1:}(${2:}) ->
+    ${3:ok}.
+
+]]></content>
+    <tabTrigger>f</tabTrigger>
+    <scope>source.erlang</scope>
+    <description>Fun Expression</description>
+</snippet>

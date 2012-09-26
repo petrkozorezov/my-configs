@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[case ${1:} of
+	${2:} ->
+		${5:ok}
+end]]></content>
+    <tabTrigger>case</tabTrigger>
+    <scope>source.erlang</scope>
+    <description>Case Expression</description>
+</snippet>

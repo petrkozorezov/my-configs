@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[-spec ${1:}(${2:}) -> ${3:ok | {error, term()}}.
+${1:}(${4:}) ->
+    ${5:ok}.
+
+]]></content>
+    <tabTrigger>sf</tabTrigger>
+    <scope>source.erlang</scope>
+    <description>Function</description>
+</snippet>

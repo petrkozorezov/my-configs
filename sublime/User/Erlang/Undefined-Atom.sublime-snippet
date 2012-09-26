@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[undefined]]></content>
+    <tabTrigger>u</tabTrigger>
+    <scope>source.erlang</scope>
+    <description>Undefined atom</description>
+</snippet>
