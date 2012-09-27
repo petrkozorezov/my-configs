@@ -169,7 +169,7 @@
 ;; ================ Projects =================
 (defun open-projects ()
   (interactive)
-  (cd "~/Desktop/Workspaces/Erlang1/")
+  (cd "~/Desktop/Workspaces/Erlang/")
   (speedbar-update-contents)
 )
 
@@ -183,3 +183,10 @@
 
 ;; =================== tabbar ============
 (tabbar-mode 1)
+
+;; =================== tabs vs spaces ===========
+(setq-default indent-tabs-mode nil)
+
+
+;; =================== cursor ==============
+(setq default-cursor-type 'bar)

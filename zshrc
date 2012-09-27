@@ -2,8 +2,9 @@
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-#export EDITOR=vim
-export EDITOR="$HOME/emacs/runemacsclient"
+export EDITOR=vim
+#export EDITOR="$HOME/emacs/runemacsclient"
+export PATH="$HOME/bin:$PATH"
 unsetopt beep
 bindkey -e
 
@@ -59,3 +60,60 @@ mkerlapp() {
 
 # ================= Music ===============
 alias music-ultra="mplayer http://94.25.53.133:80/ultra-192"
+vkrl() {
+    ssh legorod@rel.vk.legorod.drimmi.com
+}
+
+vkpl() {
+    ssh legorod@pre.vk.legorod.drimmi.com
+}
+
+vkcl() {
+    ssh legorod@cur.vk.legorod.drimmi.com
+}
+
+okrl() {
+    ssh legorod@rel.ok.legorod.drimmi.com
+}
+
+okpl() {
+    ssh legorod@pre.ok.legorod.drimmi.com
+}
+
+mmrl() {
+    ssh legorod@rel.mm.legorod.drimmi.com
+}
+
+mmpl() {
+    ssh legorod@pre.mm.legorod.drimmi.com
+}
+
+fbrl() {
+    ssh legorod@rel.fb.legorod.drimmi.com
+}
+
+fbpl() {
+    ssh legorod@pre.fb.legorod.drimmi.com
+}
+
+vkcp() {
+    ssh princess@cur.vk.princess.drimmi.com
+}
+
+vkpp() {
+    ssh princess@pre.vk.princess.drimmi.com
+}
+
+vkrp() {
+    ssh princess@rel.vk.princess.drimmi.com
+}
+
+okrp() {
+    ssh princess@rel.ok.princess.drimmi.com
+}
+
+mmrp() {
+    ssh princess@rel.mm.princess.drimmi.com
+}
+
+
