@@ -1,10 +1,11 @@
 {
-	"auto_upgrade_last_run": 1348729794,
+	"auto_upgrade_last_run": 1348832818,
 	"installed_packages":
 	[
 		"AdvancedNewFile",
 		"Git",
 		"Markdown Preview",
+		"nginx",
 		"Package Control",
 		"SideBarEnhancements",
 		"sublime-github"
