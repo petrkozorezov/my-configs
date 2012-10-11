@@ -6,5 +6,6 @@ ln -s ${PWD}/emacs/main ~/.emacs
 ln -s ${PWD}/zshrc ~/.zshrc
 ln -s ${PWD}/zsh/ ~/.zsh
 ln -s ${PWD}/sublime/ ~/.config/sublime-text-2/
+ln -s ${PWD}/xmodmap ~/.Xmodmap
 mkdir -p ~/.mc/ && ln -s ${PWD}/mc/ini ~/.mc/ini
 
